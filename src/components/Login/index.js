@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './index.css'
-// import  {useState} from 'react'
 import {login} from './auth'
 
 // We Use Class Components whenever the state is required
@@ -26,7 +25,7 @@ class Login extends Component {
     // default action that belongs to the event will not occur
     event.preventDefault()
     const {email, password} = this.state
-    // const {history} = this.props
+    
     if ( password === '' || email === '' ) {
       this.setState({ showError: true})
     } else {
@@ -47,7 +46,7 @@ class Login extends Component {
     return (
       <div className="form">
         <form onSubmit={this.onSubmitDetails} className="form-container">
-          <h1 className="heading">Login  FORM</h1>
+          <h1 className="heading">LOGIN FORM</h1>
           <div className="input-con">
             <label className="input-label" htmlFor="email">
               Email
@@ -90,3 +89,4 @@ class Login extends Component {
 }
 
 export default Login
+
