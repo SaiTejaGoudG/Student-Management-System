@@ -5,7 +5,7 @@ import './index.css'
 
 const Home = () => {
   let navigate = useNavigate();
-  // data to Utilize props, setData for reseting props
+   
   const [data,setData] = useState({
     firstName: '',
     lastName: '',
@@ -14,58 +14,44 @@ const Home = () => {
     address: '',
   })
 
-  // receiving all data from db storing in 1 variable
-  const [getData, setGetData] = useState({});
-
-
-  // pushing details & storing to db
-  useEffect (() => {
-    firebasedb.child('register').on('value', details => {
-      console.log(details.val()) // getting details from db
-      setGetData(details.val()); 
-    })
-  },[])
-
-
-  // props Assigning data in destructuring format
-  const {firstName,lastName,phoneNo,emailId,address} = {...data}
-  
   const changeHandler = event => {
     setData({...data, [event.target.id]: event.target.value})
+    console.log(event.target.id)
   }
 
   
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    // console.log(data)
     
     firebasedb.child('register').push(
       data,
-      err => {
-        if (err){
-          console.log(err);
-        }else{
-          setData({
-            firstName: '',
-            lastName: '',
-            phoneNo: '',
-            emailId: '',
-            address: '',
-          })
-        }
-      }
+      setData({
+        firstName: '',
+        lastName: '',
+        phoneNo: '',
+        emailId: '',
+        address: '',
+      })
     )
-    
   }
+
   const onChangeDelete = key => {
-    firebasedb.child(`register/${key}`).remove(
-      err => {
-        if (err) {
-          console.log(err)
-        }
-      }
-    )
+    firebasedb.child(`register/${key}`).remove()
   }
+
+
+  const [getData, setGetData] = useState({});
+
+  // pushing details & storing to db
+  useEffect (() => {
+    firebasedb.child('register').on('value', details => {
+      // getting details from db
+      setGetData(details.val()); 
+    })
+  },[])
+
+  // props Assigning data in destructuring format
+  const {firstName,lastName,phoneNo,emailId,address} = {...data}
 
   return(
     // Fragments, return a single JSX element
