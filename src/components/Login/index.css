@@ -1,0 +1,74 @@
+.input-con {
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: center;
+    justify-content: center;
+    margin: 15px; */
+    margin-top: 20px;
+    width: 100%;
+  }
+  .heading {
+    text-align: center;
+    /* font-family: ""; */
+  }
+  .labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 100vh;
+    background-image: url('https://res.cloudinary.com/drwe3lgdh/image/upload/v1671278101/pexels-tirachard-kumtanom-733857_1_civz04.jpg');
+    background-size: cover;
+  }
+  .user-input {
+    font-size: 14px;
+    height: 20px;
+    border: 1px solid #d7dfe9;
+    background-color: #e2e8f0;
+    color: #64748b;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 8px 16px 8px 16px;
+  }
+  .input-label {
+    margin-bottom: 0px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 14px;
+    color: #475569;  
+  }
+  .errMsg {
+    color: #dc3545;
+  }
+  .form-container {
+    box-shadow: 2px 2px 2px 1px rgba(20, 24, 20, 0.664);
+    /* padding: 12px; */
+    padding: 34px 48px 54px 48px;
+    background-color: #ffffff;
+    margin-right: 59px;
+    width: 250px; 
+  }
+  .button {
+    color: #ffffff;
+    background-color: #1c55e6;
+    text-align: center;
+    border: none;
+    outline: none;
+    align-self: center;
+    height: 35px;
+    width: 70px;
+    border-radius: 7px;
+    margin-top: 15px;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
