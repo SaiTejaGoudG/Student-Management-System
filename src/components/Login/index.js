@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './index.css'
 import {login} from './auth'
 
-// We Use Class Components whenever the state is required
 class Login extends Component {
 
   // Intialising State
@@ -35,7 +34,6 @@ class Login extends Component {
      }catch(err){
       this.setState({showError: true})
      }
-      
     }
   }
 
@@ -53,7 +51,6 @@ class Login extends Component {
             </label>
             <input
               className="user-input"
-              // Controlled Input value (handled by a React State)
               value={email}
               type="email"
               onChange={this.enterEmail}
@@ -89,4 +86,3 @@ class Login extends Component {
 }
 
 export default Login
-
