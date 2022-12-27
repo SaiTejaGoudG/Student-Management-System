@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import firebasedb from '../../firebase';
 
 const UpdateDetails = () => {
-  // getting Query Parameters
+  // URLSearchParams help in parsing and accessing Query Parameters.
     let query = new URLSearchParams(useLocation().search);
     let navigate = useNavigate()
 
@@ -20,10 +20,10 @@ const UpdateDetails = () => {
         setData({...data, [event.target.id]: event.target.value})
     }
 
-    // getting values from Home page 
+    // Set Key from URL params. 
     useEffect(()=>{setKey(query.get('key'))},[])
 
-    // updating values
+    // Getting Student Records from Database , using Key.  
     useEffect(()=> {
       if(key){
         firebasedb.child(`register/${key}`).on('value',data=>{
@@ -33,7 +33,7 @@ const UpdateDetails = () => {
       }   
     },[key])
 
-    // Navigating to Home page with updated values
+    // Updating values & Navigating to Home page 
     const submitHandler = event => {
       firebasedb.child(`register/${key}`).update(data,navigate('/Home'))
     }
