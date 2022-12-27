@@ -16,7 +16,6 @@ const Home = () => {
 
   const changeHandler = event => {
     setData({...data, [event.target.id]: event.target.value})
-    console.log(event.target.id)
   }
 
   
@@ -39,18 +38,16 @@ const Home = () => {
     firebasedb.child(`register/${key}`).remove()
   }
 
-
   const [getData, setGetData] = useState({});
 
-  // pushing details & storing to db
+  // Getting details from db 
   useEffect (() => {
     firebasedb.child('register').on('value', details => {
-      // getting details from db
       setGetData(details.val()); 
     })
   },[])
 
-  // props Assigning data in destructuring format
+  // Assigning props 
   const {firstName,lastName,phoneNo,emailId,address} = {...data}
 
   return(
@@ -108,7 +105,7 @@ const Home = () => {
             onChange={changeHandler}
             type="email"
             id="emailId"
-            value={data.emailId} />
+            value={emailId} />
         </div>
         <div className="register-container">
           <label className="labels" htmlFor="address">
@@ -155,7 +152,7 @@ const Home = () => {
             </tr>
            )}
       </table>
-        
+
       </div></>
   )
 }
