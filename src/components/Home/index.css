@@ -74,3 +74,23 @@
     font-size: 24px;
     font-weight: 600;
   }
+
+.update-button {
+    background-color: #1c55e6;
+    border: 0px;
+    width: 78px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-left: 10px;
+  }
+  .delete-button {
+    background-color: #d91212;
+    border: 0px;
+    width: 78px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 5px;
+    color: #ffffff;
+  }
