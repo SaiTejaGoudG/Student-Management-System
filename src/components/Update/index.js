@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import firebasedb from '../../firebase';
 
 const UpdateDetails = () => {
-  // URLSearchParams help in parsing and accessing Query Parameters.
+  
     let query = new URLSearchParams(useLocation().search);
     let navigate = useNavigate()
 
