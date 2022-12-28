@@ -146,9 +146,9 @@ const Home = () => {
               <td>{getData[key].emailId}</td>
               <td>{getData[key].address}</td>
               <td onClick={() => navigate(`/Update?key=${key}`)}
-              >Update</td> 
+              ><button>Update</button></td> 
               <td onClick={() => onChangeDelete(key)}
-              >Delete</td>
+              ><button>Delete</button></td>
             </tr>
            )}
       </table>
